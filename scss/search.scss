@@ -1,0 +1,208 @@
+.sort-bar{
+  &-inner{
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 15px;
+    .sort-list{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #999;
+      li{
+        flex: 1;
+        cursor: pointer;
+        padding: 15px 3px;
+        position: relative;
+        .sort-hidden, .sortDist-hidden, .sortPat-hidden, .sortSp-hidden, .sortGe-hidden, .sortAg-hidden, .sortAv-hidden{
+          width: 100%;
+          background-color: white;
+          position: absolute;
+          left: 0;
+          top: 10vh;
+          box-shadow: 0px 0px 5px 0px rgba(109, 109, 109, 0.75);
+          visibility: hidden;
+          height: 0px;
+          transition: .1s;
+          overflow: hidden;
+          ul{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+          }
+          padding: 5px;
+        }
+        .sortSp-hidden{
+          width: 330px;
+        }
+        .sortAv-hidden{
+          width: 210px;
+        }
+        .sort-visible, .sortDist-visible, .sortPat-visible, .sortSp-visible, .sortGe-visible, .sortAg-visible, .sortAv-visible{
+          height: fit-content;
+          visibility: visible;
+          transition: .3s;
+          top: 6vh;
+        }
+        .sortPat-visible{
+          width: 200px;
+          .container{
+            display: flex;
+          }
+        }
+        span{
+          padding-top: 15px;
+        }
+        .container {
+          position: relative;
+          padding-left: 35px;
+          padding-top: 5px;
+          cursor: pointer;
+          font-size: 15px;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          .rates{
+            img{
+              height: 15px;
+            }
+          }
+        }
+        .container input {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+          top: 0;
+          bottom: 20vh;
+        }
+        .checkmark {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 25px;
+          width: 25px;
+          background-color: rgb(0, 195, 255);
+          border-radius: 50%;
+        }
+        .container:hover input ~ .checkmark {
+          background-color: #ccc;
+        }
+        .container input:checked ~ .checkmark {
+          background-color: #2196F3;
+        }
+        .checkmark:after {
+          content: "";
+          position: absolute;
+          display: none;
+        }
+        .container input:checked ~ .checkmark:after {
+          display: block;
+        }
+        .container .checkmark:after {
+          top: 9px;
+          left: 9px;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: white;
+        }
+      }
+    }
+  }
+}
+
+
+.section-popular-doctsrs{
+  margin-top: 100px;
+  &-inner{
+    max-width: 1000px;
+    margin: auto;
+    padding: 0 15px;
+    &-content{
+      &-box{
+        margin: 25px 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid rgb(197, 197, 197);
+        padding: 15px;
+        .box-header{
+          display: flex;
+          align-items: center;
+          img{
+            height: 90px;
+          }
+          .box-name{
+            margin-left: 20px;
+            h5{
+              font-size: 19px;
+            }
+            h6{
+              font-size: 18px;
+              font-weight: lighter;
+              margin-top: 5px;
+            }
+          }
+          .box-addr{
+            margin-left: 40px;
+            span{
+              font-weight: lighter;
+              display: flex;
+              align-items: center;
+              h6{
+                font-size: 15px;
+                font-weight: lighter;
+              }
+              img{
+                height: 15px;
+              }
+            }
+            h5{
+              font-weight: lighter;
+              margin: 4px 0;
+            }
+            h4{
+              font-weight: lighter;
+            }
+          }
+        }
+        .box-footer{
+          border-top: 1px solid rgb(173, 173, 173);
+          padding: 20px 0 0 0 ;
+          display: flex;
+          align-items: center;
+          margin-top: 10px;
+          img{
+            height: 20px;
+          }
+          h5{
+            font-size: 20px;
+            margin-left: 15px;
+            font-weight: lighter;
+          }
+        }
+      }
+    }
+  }
+}
+
+.doctors-pagination{
+  width: 100%;
+  text-align: center;
+}
+
+#page_navigation {
+  clear:both;
+  margin: 20px 0;
+}
+#page_navigation a{
+    padding:5px 15px;
+    border:1px solid #d8d8d8;
+    margin:2px;
+    color:black;
+    text-decoration:none
+}
+.active_page{
+    background: #025bff;;
+    color:white !important;
+}
